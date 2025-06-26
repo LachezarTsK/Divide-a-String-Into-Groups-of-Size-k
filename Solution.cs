@@ -1,11 +1,9 @@
 
-using System;
-
 public class Solution
 {
     public string[] DivideString(string input, int groupSize, char fill)
     {
-        string[] groups = new string[(input.length() + groupSize - 1) / groupSize];
+        string[] groups = new string[(input.Length + groupSize - 1) / groupSize];
         int index = 0;
 
         for (int i = 0; i < input.Length; i += groupSize)
