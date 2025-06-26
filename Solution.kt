@@ -1,4 +1,6 @@
 
+import kotlin.math.min
+
 class Solution {
 
     fun divideString(input: String, groupSize: Int, fill: Char): Array<String> {
