@@ -1,16 +1,16 @@
 
-function divideString(input: string, size: number, fill: string): string[] {
-    const result: string[] = new Array(Math.ceil(input.length / size));
+function divideString(input: string, groupSize: number, fill: string): string[] {
+    const groups: string[] = new Array(Math.ceil(input.length / groupSize));
     let index = 0;
 
-    for (let i = 0; i < input.length; i += size) {
-        result[index] = input.substring(i, Math.min(i + size, input.length));
+    for (let i = 0; i < input.length; i += groupSize) {
+        groups[index] = input.substring(i, Math.min(i + groupSize, input.length));
         ++index;
     }
 
-    if (result[index - 1].length < size) {
-        result[index - 1] += fill.repeat(size - result[index - 1].length);
+    if (groups[index - 1].length < groupSize) {
+        groups[index - 1] += fill.repeat(groupSize - groups[index - 1].length);
     }
 
-    return result;
+    return groups;
 };
