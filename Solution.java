@@ -1,19 +1,19 @@
 
 public class Solution {
 
-    public String[] divideString(String input, int size, char fill) {
-        String[] result = new String[(input.length() + size - 1) / size];
+    public String[] divideString(String input, int groupSize, char fill) {
+        String[] groups = new String[(input.length() + groupSize - 1) / groupSize];
         int index = 0;
 
-        for (int i = 0; i < input.length(); i += size) {
-            result[index] = input.substring(i, Math.min(i + size, input.length()));
+        for (int i = 0; i < input.length(); i += groupSize) {
+            groups[index] = input.substring(i, Math.min(i + groupSize, input.length()));
             ++index;
         }
 
-        if (result[index - 1].length() < size) {
-            result[index - 1] += Character.toString(fill).repeat(size - result[index - 1].length());
+        if (groups[index - 1].length() < groupSize) {
+            groups[index - 1] += Character.toString(fill).repeat(groupSize - groups[index - 1].length());
         }
 
-        return result;
+        return groups;
     }
 }
